@@ -5,3 +5,5 @@ The second commit should be reworded.
 First squash commit.
 
 Second squash commit.
+
+This commit can be dropped...
