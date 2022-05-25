@@ -1,1 +1,1 @@
-An empty file.
+The first commit can just be picked.
