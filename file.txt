@@ -1,1 +1,2 @@
-An empty file.
+A fixup commit has now been applied! A fixup commit changes nothing about the commit, except the content of the 
+file, included in the fixup. The author, message and timestamp remains.
