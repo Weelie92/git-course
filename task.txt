@@ -1,1 +1,10 @@
-Please approach to branch `task/<description>` for a task.
+Welcome to the interactive rebase task.
+
+Initiate an interactive rebase based on main, and do the following changes:
+
+- Pick the first commit
+- Reword the second commit
+- Squash the third and fourth commit, changing the message of them
+  - They should not be squashed into the reword-commit. Just squash third, and fourth.
+- Drop the fifth commit
+- Leave the rest
