@@ -1,1 +1,6 @@
-Please approach to branch `task/<description>` for a task.
+Welcome to the fixup task!
+
+The task is simple: 
+1. Make a change to file.txt. 
+2. Add a fixup commit before the current!
+3. Rebase interactively with the flag --autosquash (unless you have set it to always true in your config).
