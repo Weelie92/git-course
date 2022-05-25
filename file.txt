@@ -1,3 +1,7 @@
 The first commit can just be picked.
 
 The second commit should be reworded.
+
+First squash commit.
+
+Second squash commit.
