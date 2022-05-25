@@ -1,1 +1,2 @@
-An empty file.
+This task was quite straight forward. I hope it found you well...
+Everything about the commit was preserved, including the author, timestamp and message (unless you altered it!).

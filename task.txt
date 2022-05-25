@@ -1,1 +1,3 @@
-Please approach to branch `task/<description>` for a task.
+Welcome to the amendment task!
+
+The task is simple: Make a change to file.txt and amend it to the previous commit!
