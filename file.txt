@@ -8,4 +8,3 @@ Here is a conflict bound to happen...
 
 The file is now changed, and I resolved the conflict, by keeping all changes. Resolving conflicts can be tough, but
 just remember that you want to keep the changes that make sense at the current commit you are at.
->>>>>>> 1006d13... fixup! Commit to add a fix to
