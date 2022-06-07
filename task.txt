@@ -1,1 +1,10 @@
-Please approach to branch `task/<description>` for a task.
+Welcome to the task on rebase conflicts. 
+
+Take a look at the previous commits on this branch. 
+We are singing "We Are the Champions" by Queen. We really like the chorus, and 
+wanted to sing it once. We commited. Then we liked it so much that we wanted to sing it a second time.
+We commited. But then we saw a fellow Queen lover, and we saw that he really likes the verses. 
+We want to have his verses and our choruses in the same lyrics file! 
+
+Rebase the branch onto `base/rebase-conflicts`. Solve the conflicts, keeping in mind that we first want to apply
+one chorus, then the second. In the end, we want the whole song to be complete!
