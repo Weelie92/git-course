@@ -161,7 +161,7 @@ This, however, is quite limiting. Rebasing is a powerful feature of git where yo
 rewrite your git history. But for most purposes, it is just simple cherry picking.
 
 #### Rebasing
-> WARNING: Rebsing rewrited history. When starting out, use a tmp branch to save your work. Accidentically deleting
+> WARNING: Rebasing rewrited history. When starting out, use a tmp branch to save your work. Accidentically deleting
 your branch or wrongly rewriting history is not easily reversable. `git checkout -b tmp`, `git checkout your-branch`.
 
 ##### Plain rebasing
@@ -412,6 +412,71 @@ This is a *very* nice tool, which you are encouraged to use.
 > Quick tip: run `git config --global rebase.autosquash true` to use autosquashing always when rebasing. I have
 never come across a time where this was an unwanted behaviour. In my opinion, it should be the default.
 
+#### Conflicts
+Ok, so now let's talk about conflicts. Resolving conflicts can be a bit stressful at first. However, it isn't so
+bad when you fully understand what a conflict truely is, and now that we've learnt so much about cherry-picking 
+and rebasing.
+
+As you may know, a conflict happens when two commits are to be merged (in a squashy fasion or in an actual merge),
+and they touch the same part of the same file. Let's jump right into an example. Say we have this file.
+```py
+def some_function():
+    doing = "sum"
+    stuff = "yeah"
+```
+
+Now say we want to branch off and do some crazy features. We do the wildest thing as to change `doing = "sum"`
+to `doing = "some"`. Now we want to do a huge pull request to submit our massive changes. But wait, the master
+branch has been updated! So before we make a pull request, we want to rebase onto master. We fetch, and rebase
+onto master. No! We got a merge conflict! It seems that while we made our changes, someone added a docstring to 
+the function:
+```py
+def some_function():
+<<<<<<< HEAD
+    doing = "some"
+=======
+    """Some docstring"""
+    doing = "sum"
+>>>>>>> master
+    stuff = "yeah"
+```
+Oh no! What do we do.
+
+Relax. Take a deep breath. What changes have we done? What changes have they done? It looks like all they did
+was add a docstring, because `doing = "sum"` looks the same as the way it did when I started out. So how do we 
+merge these? Often I like to just remove all the git conflict stuff, and see what the reality is:
+```py
+def some_function():
+    doing = "some"
+    """Some docstring"""
+    doing = "sum"
+    stuff = "yeah"
+```
+Ok, this looks better. But it doesn't quite make sense. We don't want `doint` defined twice, and we want the 
+docstring to be right below the function definition:
+```py
+def some_function():
+    """Some docstring"""
+    doing = "some"
+    stuff = "yeah"
+```
+There! All better.
+
+Now we just do
+```sh
+git add .
+git rebase --continue
+```
+And watch as our rebase is completed!
+
+The thing to keep in mind when rebasing is that you want each commit (cherry-pick) to represent the state you
+want the code to be in at that commit. So if you have a conflict, in the first of many commits when rebasing, 
+don't freak out that not all your changes are present. They will come when the rebase continuous. Just focus 
+on how the state should be right now, with this commit present. When using code editors or IDEs with git control
+in the gutter, they will indicate which changes are being applied at this commit. So remove all the git-stuff, go 
+through the changes that are being applied in the current commit, and see if it's all there, and it all makes sense.
+
 ## Tasks
 Now that you have learnt the gist of it, let's try it out! There are multiple branches in this repo. They are
-in the format `task/description` and `soltion/description`. Good luck!
+in the format `task/description` and `soltion/description`. The solution represent a git state where the task has
+been completed. Your branch should look the same, apart from the commit hashes and message of course. Good luck!
