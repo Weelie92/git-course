@@ -25,6 +25,11 @@ A commit is simply a set of changes to a single or multiple files, with a messag
 Every commit has a hash, which is based on the content it self, the message and the timestamp of the commit.
 If any of these are changed, the hash will change.
 
+A commit should represent a bulk of changes, that make sense together. If you are dealing with two bits of 
+code that have nothing to do with each other, consider splitting them up into multiple commits. This way
+it is easier for the commit to represent a logical bulk of changes, described with a good, descriptive 
+commit message.
+
 ### Remote
 A remote is a git server where the repository is stored. It is a common place where multiple people can 
 access the same git repository. A remote is not required, although sharing a git repository without one 
