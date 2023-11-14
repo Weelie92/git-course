@@ -422,7 +422,7 @@ pick cf5375e - Yet another commit
 #
 # Note that empty commits are commented out
 ```
-The fixup commit is automatically moved to where it is supposed to be. As this is the case, we don't have to
+The fixup commit is automagically moved to where it is supposed to be. As this is the case, we don't have to
 do any changes. We can simply close/exit the editor, and the rebase will take place, squashing the two commits,
 using the commit message of `9c539f8 - A commit`.
 
