@@ -123,7 +123,7 @@ commit. These changes can be code changes, or simply just editing the commit mes
 git add some/file.py # Optionally add some changes
 git commit --amend
 ```
-The will prompt for a new commit message, where you can either leave it be as it was, or change it.
+This will prompt for a new commit message, where you can either leave it be as it was, or change it.
 
 It is a very handy tool, which should definitely be put in your arsenal. 
 
@@ -422,7 +422,7 @@ pick cf5375e - Yet another commit
 #
 # Note that empty commits are commented out
 ```
-The fixup commit is automagically moved to where it is supposed to be. As this is the case, we don't have to
+The fixup commit is automatically moved to where it is supposed to be. As this is the case, we don't have to
 do any changes. We can simply close/exit the editor, and the rebase will take place, squashing the two commits,
 using the commit message of `9c539f8 - A commit`.
 
@@ -436,7 +436,7 @@ Ok, so now let's talk about conflicts. Resolving conflicts can be a bit stressfu
 bad when you fully understand what a conflict truely is, and now that we've learnt so much about cherry-picking 
 and rebasing.
 
-As you may know, a conflict happens when two commits are to be merged (in a squashy fasion or in an actual merge),
+As you may know, a conflict happens when two commits are to be merged (in a squashy fashion or in an actual merge),
 and they touch the same part of the same file. Let's jump right into an example. Say we have this file.
 ```py
 def some_function():
@@ -471,7 +471,7 @@ def some_function():
     doing = "sum"
     stuff = "yeah"
 ```
-Ok, this looks better. But it doesn't quite make sense. We don't want `doint` defined twice, and we want the 
+Ok, this looks better. But it doesn't quite make sense. We don't want `doing` defined twice, and we want the 
 docstring to be right below the function definition:
 ```py
 def some_function():
