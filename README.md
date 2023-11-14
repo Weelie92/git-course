@@ -75,8 +75,19 @@ This specifically updates the branch to the origin of that branch. `cu` is for `
 (everywhere else).
 
 ### Tag
-A tag is just another type of pointer to a commit. This is often used for versioning. Tags are more difficult to
-delete, so if you have pushed a tag. Make sure it's safe to delete it. 
+In git, a tag is a fixed reference or label that points to a specific commit in the repository's history. 
+Tags are used to mark significant points, such as releases or important milestones in your project.
+They provide a way to create permanent snapshots of your code at specific points in time.
+Imagine a git commit history like this
+
+```
+A -- B -- C -- D -- E
+```
+If you create a tag called "v1.0" at commit "C", it would look like this:
+```
+A -- B -- C (v1.0) -- D -- E
+```
+The "v1.0" tag servesw as a static reference to commit "C", representing the code as it was at the time of the 1.0 release. It doesn't move automatically when a new commits are made and remains fixed at that specific commit.
 
 ### Push
 Pushing is just the act of pushing a branch or a tag to a remote. When pushing a new branch to a remote, you
